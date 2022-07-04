@@ -1,10 +1,10 @@
 import { defineStore } from "pinia";
-import { useStorage } from "@vueuse/core";
 
-export const useRecipesStore = defineStore("recipes", {
+export const useRecipesStore = defineStore({
+  id: "recipes",
   state: () => {
     return {
-      recipes: useStorage("recipes", []),
+      recipes: [],
     };
   },
   getters: {

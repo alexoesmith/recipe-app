@@ -36,9 +36,9 @@ const handleFormSubmit = () => {
     errors.value.push("You must enter at least one ingredient");
   }
 
-  recipe.value.ingredients.forEach((ingredient) => {
+  recipe.value.ingredients.forEach((ingredient, index) => {
     if (ingredient === "") {
-      errors.value.push("Ingredient cannot be empty");
+      errors.value.push(`Ingredient ${index + 1} cannot be empty`);
     }
   });
 
@@ -61,7 +61,7 @@ const handleFormSubmit = () => {
       recipe_steps: "",
     };
 
-    router.push({ path: "/" });
+    router.push({ path: "/recipes" });
   }
 };
 </script>

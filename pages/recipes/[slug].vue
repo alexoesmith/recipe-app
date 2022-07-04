@@ -1,6 +1,10 @@
 <script setup>
 import { useRecipesStore } from "~/store/recipes";
 
+definePageMeta({
+  middleware: "auth",
+});
+
 const recipesStore = useRecipesStore();
 
 const route = useRoute();
